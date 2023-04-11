@@ -1,0 +1,324 @@
+@font-face {
+    font-family: minecraftReg;
+    src: url(fonts/minecraft-font/MinecraftRegular-Bmg3.otf);
+}
+
+@font-face {
+    font-family: minecraftBold;
+    src: url(fonts/minecraft-font/MinecraftBold-nMK1.otf);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: minecraftReg;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+
+
+body {
+    border: solid;
+    border-image: url(./imgs/fence.png) 100 50 100 50;
+    border-image-repeat: round;
+    padding: 25px 60px 20px 60px;
+    border-image-width: 100px 50px 100px 50px;
+    background-image: url(./imgs/grass.png);
+    min-width: 420px;
+    height: 100%;
+    width: 100vw;
+}
+
+.houseCat {
+    margin: 55px 35px 20px 43px;
+    width: 48px;
+    height: 48px;
+    z-index: 10;
+}
+
+.cat {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 48px;
+    height: 48px;
+}
+
+h1 {
+    text-align: center;
+    margin: auto auto 20px auto;
+    text-shadow: #dfd4c8 0 0 3px;
+    color: #322211;
+    background-image: url(./imgs/houseFloor.png);
+    border: #684018 solid 4px;
+    height: 75px;
+    width: 300px;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+@media only screen and (min-width: 1000px) {
+    main {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 30% auto;
+        grid-template-rows: 0.5fr 1fr;
+        grid-template-areas:
+            "stats shelter"
+            "catarea shelter";
+    }
+
+    #roamingCatsgrid {
+        height: 100%;
+    }
+
+    #stats {
+        flex-direction: row;
+        margin: auto;
+        height: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 999px) {
+    main {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 30% auto;
+        grid-template-rows: 0.5fr 1fr;
+
+        grid-template-areas:
+            "stats shelter"
+            "catarea shelter";
+    }
+
+    #roamingCatsgrid {
+        height: 100%;
+    }
+
+    #stats {
+        flex-direction: column;
+
+        height: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    main {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "stats"
+            "catarea"
+            "shelter";
+    }
+
+    #roamingCatsgrid {
+        height: 300px;
+    }
+
+    #stats {
+        flex-direction: row;
+
+        height: 200px;
+    }
+
+}
+
+
+
+#statsSection1{
+    margin: auto;
+}
+
+#stats {
+    grid-area: stats;
+    text-align: center;
+    margin: auto;
+    gap: 30px;
+    border: solid;
+    border-width: 15px 15px 30px 15px;
+    border-image: url(./imgs/houseBorder.png) 40 40 57 40;
+    border-image-width: 10px 10px 27px 10px;
+    background-color: lightcoral;
+
+    display: flex;
+    width: 100%;
+}
+
+#updateText {
+    /* height: 50%; */
+    margin: auto;
+    width: 50%;
+}
+
+#roamingCatsgrid {
+    grid-area: catarea;
+    align-self: start;
+    background-image: url(./imgs/catroomwall.png), url(./imgs/floorTile.png);
+    background-repeat: repeat-x, repeat;
+    background-position: top center, top center;
+
+    border: solid 20px;
+    border-image: url(./imgs/houseBorder.png) 40 40 57 40;
+    border-image-width: 20px 20px 37px 20px;
+
+}
+
+#collectedCat {
+    text-align: center;
+    color: white;
+}
+
+#roamingCats {
+    height: 100%;
+    width: 100%;
+}
+
+ul {
+    grid-area: shelter;
+    background-image: url(./imgs/housewall.png), url(./imgs/houseFloor.png);
+    background-repeat: repeat-x, repeat;
+    background-position: top center;
+    padding: 10px;
+    border: solid 30px;
+    border-image: url(./imgs/houseBorder.png) 40 40 57 40;
+    border-image-width: 30px 30px 47px 30px;
+
+
+    height: auto;
+
+    list-style: none;
+    /* *make the context flex that will wrap horizontall and equally space s*/
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-flow: horizontal wrap;
+    justify-content: center;
+    align-content: space-between;
+
+}
+
+li {
+    height: 125px;
+    width: 125px;
+    cursor: pointer;
+}
+
+
+#reset {
+    margin: auto;
+    border: 2px solid #286100;
+    background-color: #86ef3b;
+    width: 120px;
+    height: 40px;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    text-shadow: white 0 0 2px;
+    cursor: pointer;
+}
+
+footer{
+
+
+text-align: center;
+margin:30px auto auto auto;
+text-shadow: #dfd4c8 0 0 3px;
+color: #322211;
+background-image: url(./imgs/houseFloor.png);
+border: #684018 solid 4px;
+height: 50px;
+width: 300px;
+padding: 10px;
+}
+
+
+/*  *Houses */
+.pumpkin {
+    background-image: url(./imgs/pumpkin_Start.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pumpkin.collectedNoCat {
+    background-image: url(./imgs/pumpkin_Black.png);
+}
+
+.pumpkin.hovering,
+.pumpkin.collectedCat {
+    background-image: url(./imgs/pumpkin_Hover.png);
+}
+
+.kirby {
+    background-image: url(./imgs/kirbyHouseStartNew.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.kirby.collectedNoCat {
+    background-image: url(./imgs/kirby_Black.png);
+}
+
+.kirby.collectedCat {
+    background-image: url(./imgs/kirby_Hover.png);
+}
+
+.kirby.hovering {
+    background-image: url(./imgs/kirby_Hover_animated.gif);
+}
+
+.strawberry {
+    background-image: url(./imgs/strawberry_Start.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.strawberry.collectedNoCat {
+    background-image: url(./imgs/strawberry_Black.png);
+}
+
+.strawberry.hovering,
+.strawberry.collectedCat {
+    background-image: url(./imgs/strawberry_Hover.png);
+}
+
+.cactus {
+    background-image: url(./imgs/cactus_Start.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cactus.collectedNoCat {
+    background-image: url(./imgs/cactus_Black.png);
+}
+
+.cactus.hovering,
+.cactus.collectedCat {
+    background-image: url(./imgs/cactus_Hover.png);
+}
+
+.pineapple {
+    background-image: url(./imgs/pineapple_Start.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pineapple.collectedNoCat {
+    background-image: url(./imgs/pineapple_Black.png);
+}
+
+.pineapple.hovering,
+.pineapple.collectedCat {
+    background-image: url(./imgs/pineapple_Hover.png);
+}
